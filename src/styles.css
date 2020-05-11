@@ -1,1 +1,115 @@
-/* You can add global styles to this file, and also import other style files */
+.main {
+    min-height: calc(100vh - 70px - 70px);
+}
+
+.header {
+    height: 70px;
+}
+
+.footer {
+    height: 70px;
+}
+
+.footer-phanton {
+    height: 70px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 85%;
+    display: flex;
+}
+
+.btn {
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    border: none;
+    transition: .5s;
+}
+
+.modal,
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.modal-bg {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+    animation: showModal .6s forwards;
+}
+
+.linha {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    width: 100%;
+}
+
+input.ng-invalid.ng-touched,
+p-dropdown.ng-invalid.ng-touched {
+    border: 1px rgb(170, 8, 8) solid;
+    color: rgb(170, 8, 8);
+    border-radius: 4px;
+}
+
+.ng-invalid.ng-touched::placeholder {
+    color: rgb(170, 8, 8);
+}
+
+input.ng-touched.ng-valid,
+p-dropdown.ng-touched.ng-valid {
+    border: 1px rgb(3, 112, 26) solid;
+    border-radius: 4px;
+}
+
+*:disabled {
+    cursor: default;
+}
+
+.hideModal {
+    animation: hideModal .6s forwards;
+}
+
+@keyframes showModal {
+    from {
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes hideModal {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+@media only screen and (max-width: 500px) {}

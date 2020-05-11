@@ -1,0 +1,14 @@
+tr:hover {
+    background-color: #d4e1e2!important;
+    cursor: pointer;
+}
+
+tr:active {
+    background-color: red!important;
+}
+
+
+/* tr.selected {
+    background-color: #c2e0e2!important;
+    cursor: pointer;
+} */

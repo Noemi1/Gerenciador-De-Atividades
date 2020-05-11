@@ -1,0 +1,38 @@
+.header {
+    background-color: rgb(15, 67, 74);
+    display: flex;
+    align-items: stretch;
+}
+
+.header__inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.header__logo {
+    min-width: 7rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff
+}
+
+.header__navigation {
+    display: flex;
+    height: 100%;
+    align-self: flex-end;
+}
+
+.navigation__link {
+    height: 100%;
+}
+
+.navigation__link:hover {
+    color: #fff;
+    background-color: rgb(11, 52, 58);
+    padding: 0 2rem;
+}

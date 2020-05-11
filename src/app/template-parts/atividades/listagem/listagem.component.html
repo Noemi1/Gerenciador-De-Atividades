@@ -1,0 +1,29 @@
+<p-table [value]="this.atividades" [paginator]="true" [rows]="10" [columns]="this.cols">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">{{ col.header }}</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-atividade let-columns="columns">
+        <tr [class.selected]="atividade === selectedAtividade" (click)="verDetalhes(atividade)" #atividade>
+
+            <td>{{ atividade.id }}</td>
+
+            <td>{{ atividade.usuario.nome }}</td>
+
+            <td>{{ atividade.projeto.nome }}</td>
+
+            <td *ngIf="atividade.projeto.cliente">{{ atividade.projeto.cliente.nome }}</td>
+
+            <td>{{ atividade.atividade_Tipo.nome }}</td>
+
+            <td *ngIf="atividade.projeto_Modulo"> {{ atividade.projeto_Modulo.nome }}</td>
+            <td *ngIf="!(atividade.projeto_Modulo)">N/A</td>
+
+            <td>{{ atividade.data | date:'dd/MM/yyyy'}} <br> {{ atividade.data | date:'HH:mm:ss'}} </td>
+
+            <td>{{ atividade.totalHoras }}</td>
+        </tr>
+    </ng-template>
+
+</p-table>

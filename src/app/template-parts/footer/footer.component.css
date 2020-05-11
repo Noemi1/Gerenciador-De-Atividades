@@ -1,0 +1,13 @@
+.footer {
+    background-color: rgb(15, 67, 74);
+    display: flex;
+    align-items: stretch;
+}
+
+.footer__inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
