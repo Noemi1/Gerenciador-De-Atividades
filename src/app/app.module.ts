@@ -13,6 +13,12 @@ import { AtividadesComponent } from './pages/atividades/atividades.component';
 
 // PrimeNG
 import { TableModule } from 'primeng/table';
+import { UsuariosComponent } from './template-parts/usuarios/usuarios.component';
+import { FilterTable } from './shared/filterTable';
+import { PontosComponent } from './template-parts/pontos/pontos.component';
+import { LoginComponent } from './template-parts/login/login.component';
+import { ProjetosComponent } from './template-parts/projetos/projetos.component';
+import { ClientesComponent } from './template-parts/clientes/clientes.component';
 
 
 @NgModule({
@@ -23,6 +29,11 @@ import { TableModule } from 'primeng/table';
     NotFoundComponent,
     ListagemComponent,
     AtividadesComponent,
+    UsuariosComponent,
+    PontosComponent,
+    LoginComponent,
+    ProjetosComponent,
+    ClientesComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +44,7 @@ import { TableModule } from 'primeng/table';
     // PrimeNg
     TableModule,
   ],
-  providers: [],
+  providers: [FilterTable],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

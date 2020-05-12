@@ -1,7 +1,13 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs';
+
+import { FilterUtils } from 'primeng/utils';
+import * as $ from 'jquery';
+
 import { AtividadesService } from 'src/app/services/atividades.service';
 import { Atividade } from 'src/app/models/atividade';
-import { Router } from '@angular/router';
+import { FilterTable } from 'src/app/shared/filterTable';
 
 @Component({
     selector: 'app-listagem',
@@ -14,6 +20,7 @@ export class ListagemComponent implements OnInit {
     atividades: any;
     selectedAtividade: Atividade;
     touchTime = 0;
+    paginator: Observable<boolean>;
 
 
     @ViewChild('atividade') atividade: ElementRef;
@@ -21,6 +28,7 @@ export class ListagemComponent implements OnInit {
     constructor(
         private serviceAtividade: AtividadesService,
         private router: Router,
+        private filterTable: FilterTable
     ) {
         this.cols = [
             { header: 'Id' },
@@ -37,7 +45,6 @@ export class ListagemComponent implements OnInit {
     ngOnInit(): void {
         this.serviceAtividade.getAtividades().forEach(atividades => {
             this.atividades = atividades as Atividade[];
-            console.log(this.atividades)
             return this.atividades;
         });
     }
@@ -60,5 +67,9 @@ export class ListagemComponent implements OnInit {
             }
         }
     }
-
+    
+  filtro(value) {
+    this.filterTable.filterTable(value);
+  }
+  
 }

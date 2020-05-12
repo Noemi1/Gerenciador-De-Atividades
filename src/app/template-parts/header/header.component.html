@@ -2,8 +2,14 @@
     <div class="wrapper">
         <div class="header__inner">
             <div class="header__logo">
-                <a [routerLink]="['']" class="header__logo">Logo</a></div>
+                <a [routerLink]="['']" class="header__logo">Logo</a>
+            </div>
             <nav class="header__navigation">
+                <a [routerLink]="['atividades']" class="btn navigation__link">Atividades</a>
+                <a [routerLink]="['usuarios']" class="btn navigation__link">Usuários</a>
+                <a [routerLink]="['pontos']" class="btn navigation__link">Pontos</a>
+                <a [routerLink]="['projetos']" class="btn navigation__link">Projetos</a>
+                <a [routerLink]="['clientes']" class="btn navigation__link">Clientes</a>
                 <a [routerLink]="['login']" class="btn navigation__link">Login</a>
             </nav>
         </div>

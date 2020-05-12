@@ -94,6 +94,23 @@ p-dropdown.ng-touched.ng-valid {
     animation: hideModal .6s forwards;
 }
 
+.index {
+    margin: 50px 0;
+}
+
+:host>>>tr:hover {
+    background-color: #d4e1e2;
+    cursor: pointer;
+}
+
+:host>>>tr {
+    background-color: #fff;
+}
+
+:host>>>tr:active {
+    background-color: #d7faff;
+}
+
 @keyframes showModal {
     from {
         transform: translateY(-100vh);

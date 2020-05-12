@@ -1,0 +1,35 @@
+<section class="index">
+    <header class="index__header">
+        <div class="wrapper">
+            <h3>Usuarios</h3>
+        </div>
+    </header>
+    <div class="wrapper">
+        <p-table [value]="this.usuarios" [paginator]="true" [rows]="10" [columns]="this.cols" #table>
+            <ng-template pTemplate="caption">
+                <div class="ui-table-globalfilter-container">
+                    <div style="text-align: right">
+                        <i class="pi pi-search" style="margin: 5px 10px auto 0"></i>
+                        <input type="text" pInputText size="50" placeholder="Pesquisar" (keyup)="filtro($event.target.value)" style="width: auto">
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">{{ col.header }}</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-usuario let-columns="columns">
+                <tr [class.selected]="usuario === userSelected" (click)="verDetalhes(usuario)" #usuario>
+
+                    <td>{{ this.usuario.id }}</td>
+
+                    <td>{{ this.usuario.nome }}</td>
+                </tr>
+            </ng-template>
+
+        </p-table>
+
+    </div>
+
+</section>
